@@ -6,9 +6,10 @@
 
 <h2>Add a New Department</h2>
 
-<form action="/Department/Create" method="POST">
+<form action="/Department/Create" method="POST" name="newDepartment_Form">
     <div>
-        <label>Department Name:</label> <input type="text" name="DepartmentName" />
+        <!-- DEPARTMENT NAME -->
+        <label>Department Name:</label> <input type="text" name="DepartmentName" id="in_departmentName" />
     </div>
 
     <!-- Add option to input types and number of Roles to be within new Department -->
@@ -19,3 +20,47 @@
 
     </div>
 </form>
+
+
+<!-- Form Validation Script -->
+<script>
+    //page load function
+    window.onload = pageLoad;
+
+    function pageLoad() {
+
+        //==== VARIABLES / OBJECTS =========
+        //variables for all DOM form elements
+        var formListener = document.forms.newDepartment_Form;
+
+
+        //==== LOGIC =============
+
+        //function for form submission/processing
+        function formProcess() {
+            //alert("functionProcess TEST");    //debug test to check function formProcess is working: comment-out when successful debug
+
+            //DOM form elements variables:
+            var in_DepartmentName = formListener.DepartmentName;                                   //form student first name string input
+
+
+            //FORM VALIDATION:
+            //DEPARTMENT NAME: check/ensure that the Department Name input is not empty
+            if (in_DepartmentName.value === null || in_DepartmentName.value === "" || in_DepartmentName.value === false) {
+                in_DepartmentName.style.background = "red";      //change input field to show red background color
+                in_DepartmentName.focus();                       //set focus to input field
+                console.log("User input: department name: " + in_DepartmentName.value);
+                return false;	//Prevent next page load
+            } else {
+                in_DepartmentName.style.background = "white";    //reset input field to show white background color when no error detected
+                console.log("User input: department name: " + in_DepartmentName.value);
+            }
+
+        }   //end of function formProcess
+
+        //event listener for button
+        formListener.onsubmit = formProcess;
+        //alert("Form validation test before loading next page");     //comment-out this line upon successful test
+
+    }   //end onload function
+</script>
