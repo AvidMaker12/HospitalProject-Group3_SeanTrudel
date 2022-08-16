@@ -175,7 +175,7 @@ curl -F StaffPicture=@file.jpg https://localhost:44342/api/StaffData/UploadStaff
 - UX/UI Design
 
 <!-- Local Copy Improvements for individual Final Submission: -->
-## By Sean Trudel:
+## Local Copy Improvements for individual Final Submission (by Sean Trudel):
 - JavaScript form input validation for new Department CRUD
 - JavaScript form input validation for new Prescription CRUD
 
