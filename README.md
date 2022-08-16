@@ -174,6 +174,11 @@ curl -F StaffPicture=@file.jpg https://localhost:44342/api/StaffData/UploadStaff
 - Show Hospital Location in Map
 - UX/UI Design
 
+<!-- Local Copy Improvements for individual Final Submission: -->
+## By Sean Trudel:
+- JavaScript form input validation for new Department CRUD
+- JavaScript form input validation for new Prescription CRUD
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
