@@ -150,7 +150,7 @@ namespace HospitalProject_Group3.Controllers
         /// </example>
         [ResponseType(typeof(void))]
         [HttpPost]
-        /*[Authorize]*/
+        [Authorize]
         public IHttpActionResult UpdatePrescription(int id, Prescription prescription)
         {
             if (!ModelState.IsValid)
@@ -201,7 +201,7 @@ namespace HospitalProject_Group3.Controllers
         /// </example>
         [ResponseType(typeof(Prescription))]
         [HttpPost]
-        /*[Authorize]*/
+        [Authorize]
         public IHttpActionResult AddPrescription(Prescription prescription)
         {
             if (!ModelState.IsValid)
@@ -231,7 +231,7 @@ namespace HospitalProject_Group3.Controllers
         /// </example>
         [ResponseType(typeof(Prescription))]
         [HttpPost]
-        /*[Authorize]*/
+        [Authorize]
         public IHttpActionResult DeletePrescription(int id)
         {
             Prescription prescription = db.Prescriptions.Find(id);

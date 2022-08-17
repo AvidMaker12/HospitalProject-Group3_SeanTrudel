@@ -105,7 +105,7 @@ namespace HospitalProject_Group3.Controllers
 
 
         // GET: Prescription/New
-        /*[Authorize]*/
+        [Authorize]
         public ActionResult New()
         {
             /*
@@ -121,7 +121,7 @@ namespace HospitalProject_Group3.Controllers
 
         // POST: Prescription/Create
         [HttpPost]
-        /*[Authorize]*/
+        [Authorize]
         public ActionResult Create(Prescription prescription)
         {
             GetApplicationCookie();//get token credentials
@@ -150,7 +150,7 @@ namespace HospitalProject_Group3.Controllers
 
 
         // GET: Prescription/Edit/5
-        /*[Authorize]*/
+        [Authorize]
         public ActionResult Edit(int id)
         {
             UpdatePrescription ViewModel = new UpdatePrescription();
@@ -175,7 +175,7 @@ namespace HospitalProject_Group3.Controllers
 
         // POST: Prescription/Update/5
         [HttpPost]
-        /*[Authorize]*/
+        [Authorize]
         public ActionResult Update(int id, Prescription prescription)
         {
             GetApplicationCookie();//get token credentials
@@ -198,7 +198,7 @@ namespace HospitalProject_Group3.Controllers
         }
 
         // GET: Prescription/DeleteConfirm/5
-        /*[Authorize]*/
+        [Authorize]
         public ActionResult DeleteConfirm(int id)
         {
             // get the existing prescription information
@@ -213,7 +213,7 @@ namespace HospitalProject_Group3.Controllers
 
         // POST: Prescription/Delete/5
         [HttpPost]
-        /*[Authorize]*/
+        [Authorize]
         public ActionResult Delete(int id)
         {
             GetApplicationCookie();//get token credentials
