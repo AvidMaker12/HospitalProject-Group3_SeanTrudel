@@ -6,7 +6,7 @@
 
 <h2>Add a New Prescription</h2>
 
-<form action="/Prescription/Create" method="POST">
+<form action="/Prescription/Create" method="POST" name="newPrescription_Form">
     <div>
         <label>Prescription Name:</label> <input type="text" name="PrescriptionName" />
     </div>
@@ -27,3 +27,47 @@
 
     </div>
 </form>
+
+
+<!-- Form Validation Script -->
+<script>
+    //page load function
+    window.onload = pageLoad;
+
+    function pageLoad() {
+
+        //==== VARIABLES / OBJECTS =========
+        //variables for all DOM form elements
+        var formListener = document.forms.newPrescription_Form;
+
+
+        //==== LOGIC =============
+
+        //function for form submission/processing
+        function formProcess() {
+            //alert("functionProcess TEST");    //debug test to check function formProcess is working: comment-out when successful debug
+
+            //DOM form elements variables:
+            var in_PrescriptionName = formListener.PrescriptionName; //form prescription name string input
+
+
+            //FORM VALIDATION:
+            //DEPARTMENT NAME: check/ensure that the Department Name input is not empty
+            if (in_PrescriptionName.value === null || in_PrescriptionName.value === "" || in_PrescriptionName.value === false) {
+                in_PrescriptionName.style.background = "red";      //change input field to show red background color
+                in_PrescriptionName.focus();                       //set focus to input field
+                console.log("User input: prescription name: " + in_PrescriptionName.value);
+                return false;	//Prevent next page load
+            } else {
+                in_PrescriptionName.style.background = "white";    //reset input field to show white background color when no error detected
+                console.log("User input: prescription name: " + in_PrescriptionName.value);
+            }
+
+        }   //end of function formProcess
+
+        //event listener for button
+        formListener.onsubmit = formProcess;
+        //alert("Form validation test before loading next page");     //comment-out this line upon successful test
+
+    }   //end onload function
+</script>
